@@ -1,5 +1,4 @@
 package com.epam.jl.demo.ioc;
-
 import lombok.Value;
 
 @Value
