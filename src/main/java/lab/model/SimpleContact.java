@@ -1,4 +1,5 @@
-package com.epam.jl.demo.ioc;
+package lab.model;
+
 import lombok.Value;
 
 @Value
