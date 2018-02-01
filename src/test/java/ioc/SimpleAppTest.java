@@ -1,5 +1,6 @@
 package ioc;
 
+import lab.model.UsualPerson;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,10 +16,11 @@ class SimpleAppTest {
 
     @Test
     void testInitPerson() {
+		UsualPerson usualPerson = (UsualPerson) context.getBean("person");
 		assertEquals(getExpectedPerson(),
 				// FYI: Another way to achieve the bean
 				// context.getBean(UsualPerson.class)
-				context.getBean("person")
-		);
+				usualPerson);
+		System.out.println(usualPerson.toString());
 	}
 }

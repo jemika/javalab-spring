@@ -12,4 +12,7 @@ public class UsualPerson implements Person {
     private Country country;
     private int age;
     private List<Contact> contacts;
+    private float height;
+    private boolean programmer;
+
 }
