@@ -11,7 +11,7 @@ public interface Person {
     int getAge();
     float getHeight();
     boolean isProgrammer();
-//    boolean isBroke();
+    boolean isBroke();
     List<Contact> getContacts();
 
     default String getName() {

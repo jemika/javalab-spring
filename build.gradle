@@ -12,7 +12,7 @@ version = '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
-sourceCompatibility = 8
+sourceCompatibility = 9
 
 repositories {
     mavenCentral()
@@ -32,7 +32,10 @@ test.testLogging.showStandardStreams = true
 dependencies {
     compile 'org.springframework:spring-context:+',
 
-            // todo: insert additional dependencies here
+            // AOP
+            'org.aspectj:aspectjrt:+',
+            'org.aspectj:aspectjweaver:+',
+            'aopalliance:aopalliance:+',
 
             'org.apache.logging.log4j:log4j-slf4j-impl:+',
             'javax.xml.bind:jaxb-api:+',
