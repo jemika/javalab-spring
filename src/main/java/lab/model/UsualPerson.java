@@ -14,7 +14,7 @@ public class UsualPerson implements Person {
     private Country country;
     private int age;
     private float height;
-    private boolean isProgrammer;
-    private boolean isBroke;
+    private boolean programmer;
+    private boolean broke;
     private List contacts;
 }

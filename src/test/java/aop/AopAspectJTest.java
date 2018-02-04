@@ -20,8 +20,7 @@ class AopAspectJTest {
 
     @Autowired
     private Bar bar;
-
-    @Autowired
+    
     private Person person;
 
     private String out;

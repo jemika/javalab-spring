@@ -1,31 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="person" class="lab.model.UsualPerson"
-          c:id="1"
-          c:firstName="John"
-          c:lastName="Smith"
-          c:country-ref="country"
-          c:age="35"
-          c:contacts-ref="contacts"
-          c:height="1.78"
-          c:programmer="true"/>
+	<aop:aspectj-autoproxy />
+	<context:annotation-config/>
+	<context:component-scan base-package="lab.model"/>
+	<import resource="ioc.xml"/>
 
-    <bean id="country" class="lab.model.SimpleCountry"
-          c:id="1"
-          c:name="Russia"
-          c:codeName="RU"/>
+	<bean id="bar" class="lab.model.ApuBar" />
 
-    <util:list id="contacts" value-type="lab.model.Contact">
-        <bean class="lab.model.SimpleContact"
-              c:type="TELEPHONE" c:value="+7-234-456-67-89"/>
-        <bean class="lab.model.SimpleContact"
-              c:type="EMAIL" c:value="asd@asd.ru"/>
-    </util:list>
+	<bean id="politeness" class="lab.aop.Politeness" />
 
 </beans>

@@ -1,8 +1,10 @@
 package lab.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class ApuBar implements Bar {
 
-    @Override
+    @Autowired
 	public Squishee sellSquishee(Person customer)  {
         if (customer.isBroke())
             throw new CustomerBrokenException();

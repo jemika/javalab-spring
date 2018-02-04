@@ -18,7 +18,9 @@ public interface Person {
         return String.format("%s %s", getFirstName(), getLastName());
     }
 
-    default String gatHello(Person person) {
+    default String sayHello(Person person) {
         return format("Hello, %s! I`m %s", person.getName(), getName());
     }
+
+
 }
