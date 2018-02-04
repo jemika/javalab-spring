@@ -3,6 +3,7 @@ package aop;
 import lab.model.ApuBar;
 import lab.model.Bar;
 import lab.model.Person;
+import lombok.Setter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,9 +19,10 @@ import static org.springframework.test.util.AssertionErrors.assertTrue;
 @ContextConfiguration("classpath:application-context.xml")
 class AopAspectJTest {
 
-    @Autowired
+    @Setter(onMethod = @__(@Autowired))
     private Bar bar;
-    
+
+    @Setter(onMethod = @__(@Autowired))
     private Person person;
 
     private String out;
