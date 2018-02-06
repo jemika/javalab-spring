@@ -1,10 +1,11 @@
 package lab.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ApuBar implements Bar {
 
-    @Autowired
+    @Override
 	public Squishee sellSquishee(Person customer)  {
         if (customer.isBroke())
             throw new CustomerBrokenException();
