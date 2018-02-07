@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -19,10 +20,10 @@ import static org.springframework.test.util.AssertionErrors.assertTrue;
 @ContextConfiguration("classpath:aop.xml")
 class AopAspectJTest {
 
-    @Setter(onMethod = @__(@Autowired))
+    @Autowired
     private Bar bar;
 
-    @Setter(onMethod = @__(@Autowired))
+    @Autowired
     private Person person;
 
     private String out;

@@ -45,7 +45,7 @@ dependencies {
             'io.vavr:vavr:+'
 
     // H2
-    testRuntime 'com.h2database:h2'
+    testRuntime 'com.h2database:h2:+'
 
     compileOnly 'org.projectlombok:lombok:+',
             'edu.washington.cs.types.checker:checker-framework:+'

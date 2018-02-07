@@ -4,6 +4,7 @@ import lab.model.Bar;
 import lab.model.CustomerBrokenException;
 import lab.model.Person;
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
