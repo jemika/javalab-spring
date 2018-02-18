@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ContextConfiguration("classpath:orm.xml")
 class CountryDaoImplTest {
 
-    private Country exampleCountry = new SimpleCountry(1, "Australia", "AU");
+    private Country exampleCountry = new SimpleCountry(1L, "Australia", "AU");
 
     @Autowired
     private CountryDao countryDao;
@@ -29,15 +29,15 @@ class CountryDaoImplTest {
 
         countryDao.save(exampleCountry);
 
-        List<Country> countryList = countryDao.getCountries();
-        assertEquals(1, countryList.size());
-        assertEquals(exampleCountry, countryList.get(0));
+        List<Country> countries  = countryDao.getCountries();
+        assertEquals(1, countries.size());
+        assertEquals(exampleCountry, countries.get(0));
     }
 
     @Test
     void testGtAllCountries() {
 
-        countryDao.save(new SimpleCountry(1, "Canada", "CA"));
+        countryDao.save(new SimpleCountry(1L, "Canada", "CA"));
 
         List<Country> countryList = countryDao.getCountries();
         assertEquals(2, countryList.size());

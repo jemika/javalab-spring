@@ -24,7 +24,7 @@ public interface Tests {
                 1,
                 "John",
                 "Smith",
-                new SimpleCountry(1, "Russia", "RU"),
+                new SimpleCountry(1L, "Russia", "RU"),
                 35,
                 1.78f,
                 true,

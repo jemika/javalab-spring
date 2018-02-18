@@ -17,4 +17,12 @@
 	<import resource="jdbc.xml"/>
 	<context:component-scan base-package="lab.dao.jpa"/>
 
+	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="persistenceUnitName" value="springframework.lab.orm.jpa"/>
+		<property name="persistenceProviderClass" value="org.hibernate.jpa.HibernatePersistenceProvider"/>
+		<property name="loadTimeWeaver" ref="weaver"/>
+	</bean>
+
+	<bean id="weaver" class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
 </beans>

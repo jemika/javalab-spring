@@ -1,15 +1,18 @@
 package lab.model;
 
-import lombok.Value;
+import lombok.*;
 import lombok.experimental.Wither;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Value
+@Data
 @Entity
 @Component("person")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UsualPerson implements Person {
 
     @Id
@@ -21,11 +24,13 @@ public class UsualPerson implements Person {
 
     @ManyToOne
     @JoinColumn(name = "country_id")
-    private Country country;
+    private SimpleCountry country;
     private int age;
     private float height;
     private boolean programmer;
     @Wither
     private boolean broke;
+    @OneToMany
+    @Singular
     private List contacts;
 }
